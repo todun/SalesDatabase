@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>8f0a6cee-3389-4488-b231-51ae27732441</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">8f0a6cee-3389-4488-b231-51ae27732441.TABLE:postgres.public.salesperson</node>
+    <node x="330.25" y="212.5">8f0a6cee-3389-4488-b231-51ae27732441.TABLE:postgres.public.bigorders</node>
+    <node x="282.0" y="22.0">8f0a6cee-3389-4488-b231-51ae27732441.TABLE:postgres.public.customer</node>
+    <node x="63.25" y="168.0">8f0a6cee-3389-4488-b231-51ae27732441.TABLE:postgres.public.orders</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="8f0a6cee-3389-4488-b231-51ae27732441.TABLE:postgres.public.orders" target="8f0a6cee-3389-4488-b231-51ae27732441.TABLE:postgres.public.salesperson">
+      <point x="-61.75" y="-81.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="8f0a6cee-3389-4488-b231-51ae27732441.TABLE:postgres.public.bigorders" target="8f0a6cee-3389-4488-b231-51ae27732441.TABLE:postgres.public.customer">
+      <point x="0.0" y="-36.5" />
+      <point x="48.25" y="37.0" />
+    </edge>
+    <edge source="8f0a6cee-3389-4488-b231-51ae27732441.TABLE:postgres.public.orders" target="8f0a6cee-3389-4488-b231-51ae27732441.TABLE:postgres.public.customer">
+      <point x="61.75" y="-81.0" />
+      <point x="248.5" y="143.0" />
+      <point x="330.25" y="143.0" />
+      <point x="-48.25" y="37.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="262.0" y="165.0" />
+  <SelectedNodes>
+    <node>8f0a6cee-3389-4488-b231-51ae27732441.TABLE:postgres.public.orders</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>

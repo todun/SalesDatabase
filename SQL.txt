@@ -1,0 +1,76 @@
+Requirement 9
+
+First question:
+Return the names of all salespeople that have an order with George
+
+First answer:
+SELECT DISTINCT sp.Name AS "Sales people having orders belonging to cusomer George"
+FROM Salesperson AS sp, Customer AS c, Orders AS o
+WHERE o.customerID = c.customerID AND sp.salespersonID = o.salespersonID AND c.Name = 'George';
+
+
+Second question:
+Return the names of all salespeople that do not have any order with George
+
+Second answer:
+SELECT DISTINCT sp.Name AS "Sales people having orders not belonging to cusomer George"
+FROM Salesperson AS sp, Customer AS c, Orders AS o
+WHERE o.customerID = c.customerID AND sp.salespersonID = o.salespersonID AND c.Name != 'George';
+
+Third question:
+Return the names of salespeople that have 2 or more orders.
+
+Third answer:
+SELECT DISTINCT sp.Name AS "Sales people with 2 or more orders"
+FROM Salesperson AS sp, Customer AS c, Orders AS o
+WHERE o.customerID = c.customerID AND sp.salespersonID = o.salespersonID AND o.NumberOfUnits >= 2;
+
+
+
+Requirement 10
+
+First question:
+
+	Return the name of the salesperson with the 3rd highest salary.
+
+First answer:
+
+SELECT Name AS "Sales person with 3rd highest salary"
+FROM (
+       SELECT
+         Name,
+         ROW_NUMBER()
+         OVER (
+           ORDER BY salary DESC) AS rownumber
+       FROM Salesperson
+     ) AS orderedtable
+WHERE rownumber IN (3);
+
+
+
+Second question:
+	Create a new roll­up table BigOrders(where columns are CustomerID, TotalOrderValue),
+	and insert into that table customers whose total Amount across all orders is greater than 1000
+
+Second answer:
+INSERT INTO BigOrders (CustomerID, TotalOrderValue)
+  SELECT
+    DISTINCT
+    CustomerID,
+    SUM(CostOfUnit)
+  FROM Orders
+  GROUP BY CustomerID
+  HAVING SUM(CostOfUnit) > 1000;
+
+Third question:
+	Return the total Amount of orders for each month, ordered by year, then month
+	(both in descending order)
+
+Third answer:
+SELECT
+  SUM(CostOfUnit)                      AS "Total Amount Of Orders",
+  date_part('YEAR', Orders.OrderDate)  AS "Order Year",
+  date_part('MONTH', Orders.OrderDate) AS "Order Month"
+FROM Orders
+GROUP BY orders.OrderDate, date_part('MONTH', Orders.OrderDate)
+ORDER BY date_part('YEAR', Orders.OrderDate) DESC, date_part('MONTH', Orders.OrderDate) DESC;
