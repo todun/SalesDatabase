@@ -1,13 +1,14 @@
 # README #
 
-## postgres` setup on osx
-1. launch `postgresql` on terminal with : `brew services start postgresql`
-2. connect to database from terminal with `psql -d postgres`
-
 ## running the sql script
 In a terminal, from the directory containing the sql script, excute the following statements
-`createdb -h localhost`
-`psql -f salesdatabase.sql`
+1. `cd /path/to/root/of/project`
+2. `createdb -h localhost`
+3. `psql -f salesdatabase.sql`
+
+## postgres` setup on osx
+1. `brew services start postgresql` # launch postgresql in terminal 
+2. `psql -d postgres` # connect to interactive RDBMS from terminal
 
 ## running from IDEA DataGrip
 1. install postgre drivers
@@ -27,3 +28,6 @@ In a terminal, from the directory containing the sql script, excute the followin
 - Stackoverflow
 - w3schools
 - Postgresql documentation
+
+## Dependencies
+- postgresql 9.6.1
