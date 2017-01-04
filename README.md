@@ -2,6 +2,7 @@
 
 ## running the sql script
 In a terminal, from the directory containing the sql script, excute the following statements
+
 1. `cd /path/to/root/of/project`
 2. `createdb -h localhost`
 3. `psql -f salesdatabase.sql`
