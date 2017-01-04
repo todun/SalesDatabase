@@ -23,7 +23,7 @@ In a terminal, from the directory containing the sql script, excute the followin
 - duplicates removed
 - added additional records to the `Orders` table to facilitate testing of different years
 
-## Documentation
+## References
 - IDEA DataGrip documentation
 - PostgreSql documentation
 - Stackoverflow
